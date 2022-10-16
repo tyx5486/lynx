@@ -59,7 +59,7 @@ def most_outdated():
             page_text=f"Most Oudated Page for top ten category: {category}",
         )
 
-    # when category is top ten category, compute the results on the fly instead
+    # when category is not top ten category, compute the results on the fly instead
     else:
         query_other = f"""  
         SELECT * 
