@@ -11,7 +11,7 @@ def home():
     return render_template("index.html", page_text="Welcome!")
 
 
-@app.route("/query")
+@app.route("/query", methods=['GET', 'POST'])
 def query():
 
     # get header, connect to database and run query
@@ -30,7 +30,7 @@ def query():
     return data, 200
 
 
-@app.route("/most_outdated")
+@app.route("/most_outdated", methods=['GET', 'POST'])
 def most_outdated():
 
     # get argument and connect to database
