@@ -160,7 +160,7 @@ Or via the link on your browser! Here are some sample categories:
 The pipelines need to run twice a month, this is done via `app`'s `Dockerfile` and a `crontab` to keep things as simple as possible.
 
 ## 4. Sharing
-Docker is build 
+We use docker.
 
 ## 5. Submit Code and Documentation
 This git repo is the code and you are reading the documentation!
