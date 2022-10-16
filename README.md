@@ -113,7 +113,7 @@ difference between the last modification of a referred page and the last
 modification of the page.
 
 #### Request
-```curl http://134.209.101.252/most_outdated?category=Coordinates_on_Wikidata```
+```curl http://134.209.101.252:5000/most_outdated?category=Coordinates_on_Wikidata```
 
 Or via the link on your browser! Here are some sample categories:
  - [Coordinates_on_Wikidata](http://134.209.101.252:5000/most_outdated?category=Coordinates_on_Wikidata)
