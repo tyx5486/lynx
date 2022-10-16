@@ -1,4 +1,4 @@
-from utils.helper_functions import execute, close
+from utils.helper_functions import execute
 
 # wiki_catagory_rank ranks catagories by number of pages. 
 # the category with the most pages is ranked 1
@@ -22,8 +22,8 @@ sql_create_wiki_category_rank = """
 
 # wiki_most_outdated a records the most outdated page for each category
 # A page is called outdated if at least one of the pages it refers to was modified
-# later than the page itself. If more than 1 page in a category are outdated by greater
-# than 839 days, we return the page with the smallest page_id
+# later than the page itself. If more than 1 page in a category are outdated by
+# the same number of seconds, we take the page with the smallest page_id
 sql_drop_wiki_most_outdated_top_ten = """
     DROP TABLE IF EXISTS wiki_most_outdated_top_ten
 """
@@ -57,4 +57,3 @@ def aggregate():
         # logs
         print(f"{command[command.find('wiki'):]} created")
 
-    close()

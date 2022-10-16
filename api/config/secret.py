@@ -1,6 +1,11 @@
+import os
+
+db_password = os.getenv('DB_PASSWORD')
+db_database = os.getenv('DB_DATABASE')
+
 host_args = {
-    "host": "host.docker.internal",
+    "host": "db",
     "user": "root",
-    "password": "password",
-    "database": "database"
+    "password": db_password,
+    "database": db_database
 }

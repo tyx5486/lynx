@@ -7,11 +7,17 @@ services:
       - ./app:/usr/src/app
     depends_on: 
       - db
+    environment:
+        - DB_PASSWORD=${DB_PASSWORD} 
+        - DB_DATABASE=database
   db:
     container_name: db
     build: ./db
     ports:
       - "3306:3306"
+    environment:
+        - MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+        - MYSQL_DATABASE=database
   api:
     container_name: api
     build: ./api
@@ -21,3 +27,6 @@ services:
       - db
     ports:
       - "5000:5000"
+    environment:
+        - DB_PASSWORD=${DB_PASSWORD}
+        - DB_DATABASE=database

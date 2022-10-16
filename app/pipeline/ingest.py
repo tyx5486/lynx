@@ -5,12 +5,17 @@ def ingest_files(tables):
 
     for table in tables:
 
+        # pulls the wiki dump files from https://dumps.wikimedia.org/simplewiki/
         download_dump(table)
+
+        # extract to get the sql file
         extract_dump(table)
+
+        # pulls out individual sql commands from sql file
         commands = get_commands(table)
 
         # creates the table in the database and insert rows
-        for command in commands:
+        for command in commands[0:20]:
             execute(command)
 
         # logs

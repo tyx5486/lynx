@@ -1,3 +1,5 @@
-app/data/
+*.gz
+*.sql
 *.pyc
 __pycache__/
+.env

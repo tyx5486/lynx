@@ -6,10 +6,6 @@ import shutil
 import mysql.connector
 
 
-conn = mysql.connector.connect(**host_args)
-cur = conn.cursor(dictionary=True, buffered=True)
-
-
 def download_dump(table_name):
     """
     Downloads a sql.gz file from https://dumps.wikimedia.org/simplewiki/latest
@@ -64,10 +60,12 @@ def get_commands(table_name):
     sql_file = fd.read()
     fd.close()
 
+    # get the DROP and CREATE commands
     ddl_commands = sql_file.split('-- Dumping data')[0].split(';')
     commands = ["DROP", "CREATE"]
     ddl_commands = [ddl_command for ddl_command in ddl_commands if any(c in ddl_command for c in commands)]
 
+    # get the INSERT commands
     dml_commands = sql_file.split('-- Dumping data')[1].split('\n')
     dml_commands = [dml_command for dml_command in dml_commands if "INSERT" in dml_command]
 
@@ -76,7 +74,7 @@ def get_commands(table_name):
 
 def execute(command):
     """
-    Executes a SQL query
+    Initialized the connection and cursor, runs the command, closes the connection and cursor
 
     Parameters
     ----------
@@ -84,16 +82,16 @@ def execute(command):
         The query to be executed
     """
 
+    conn = mysql.connector.connect(**host_args)
+    cur = conn.cursor(dictionary=True, buffered=True)
+
+    # logs
     print(f"Running : {command[0:50]}..")
 
     cur.execute(command, multi=True)
     conn.commit()
 
-
-def close():
-    """
-    Close the cursor, close the connection
-    """
-
     cur.close()
     conn.close()
+
+
