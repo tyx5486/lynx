@@ -154,6 +154,18 @@ Or via the link on your browser! Here are some sample categories:
           <td>Wake_Island</td>
         </tr>
         <tr>
+          <th>category</th>
+          <td>Coordinates_on_Wikidata</td>
+        </tr>
+        <tr>
+          <th>last_modification_date</th>
+          <td>2022-09-29 01:31:15</td>
+        </tr>
+      </tbody>
+    </table>
+
+  </body>
+</html>
 ```
 
 ## 3. Scheduling
