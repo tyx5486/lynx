@@ -49,7 +49,7 @@ def aggregate():
         "sql_create_wiki_most_outdated_top_ten"
     ]
 
-    for command in commands[0:5]:
+    for command in commands:
 
         # creates the tables in the database
         execute(eval(command))

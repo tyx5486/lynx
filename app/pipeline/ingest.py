@@ -15,7 +15,7 @@ def ingest_files(tables):
         commands = get_commands(table)
 
         # creates the table in the database and insert rows
-        for command in commands[0:20]:
+        for command in commands:
             execute(command)
 
         # logs
