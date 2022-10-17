@@ -48,9 +48,11 @@ The tables are created as is; no transformations are done here.
 We do the transformations across 3 steps to allow for easier data auditing and debugging.
 
 ## 2. API Usage
-The 2 endpoints the follow are built with `flask` and `waitress`, a production WSGI server.
+The 2 endpoints that follow are built with `flask` and `waitress`, a production WSGI server.
 
-You can replace the domain with `host.docker.internal` if the containers are running on your local machine.
+You can replace the domain with `host.docker.internal` if the containers are running on your local machine. 
+
+The endpoints we provide are currently running on machines hosted by (Digital Ocean)[https://www.digitalocean.com/].
 
 ---
 
