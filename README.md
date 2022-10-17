@@ -52,7 +52,7 @@ The 2 endpoints that follow are built with `flask` and `waitress`, a production 
 
 You can replace the domain with `host.docker.internal` if the containers are running on your local machine. 
 
-The endpoints we provide are currently running on machines hosted by (Digital Ocean)[https://www.digitalocean.com/].
+The endpoints we provide are currently running on machines hosted by [Digital Ocean](https://www.digitalocean.com/).
 
 ---
 
