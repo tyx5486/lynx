@@ -50,17 +50,13 @@ We do the transformations across 3 steps to allow for easier data auditing and d
 ## 2. API Usage
 The 2 endpoints that follow are built with `flask` and `waitress`, a production WSGI server.
 
-You can replace the domain with `host.docker.internal` if the containers are running on your local machine. 
-
-The endpoints we provide are currently running on machines hosted by [Digital Ocean](https://www.digitalocean.com/).
-
 ---
 
 An endpoint that receives an arbitrary SQL query and returns the result of
 executing the query on the database.
 
 #### Request
-```curl -H "query: SELECT * FROM page LIMIT 1" http://134.209.101.252:5000/query```
+```curl -H "query: SELECT * FROM page LIMIT 1" http://host.docker.internal:5000/query```
 
 #### Response
 ```
@@ -115,13 +111,7 @@ difference between the last modification of a referred page and the last
 modification of the page.
 
 #### Request
-```curl http://134.209.101.252:5000/most_outdated?category=Coordinates_on_Wikidata```
-
-Or via the link on your browser! Here are some sample categories:
- - [Coordinates_on_Wikidata](http://134.209.101.252:5000/most_outdated?category=Coordinates_on_Wikidata)
- - [Living_people](http://134.209.101.252:5000/most_outdated?category=Living_people)
- - [Movie_stubs](http://134.209.101.252:5000/most_outdated?category=Movie_stubs)
- - [1012_births](http://134.209.101.252:5000/most_outdated?category=1012_births)
+```curl http://host.docker.internal:5000/most_outdated?category=Coordinates_on_Wikidata```
 
 #### Response
 ```
